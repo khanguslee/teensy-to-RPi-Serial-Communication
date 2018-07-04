@@ -9,7 +9,7 @@ void setup() {
   // See here: https://www.pjrc.com/teensy/td_uart.html
   int baud_rate = 500000;
   Serial.begin(baud_rate);    // USB Serial 
-  HWSERIAL.begin(baud_rate);  // Hardware Serial (RX & TX pins)    
+  HWSERIAL.begin(baud_rate, SERIAL_8O1/*8 Data bits, Odd Parity*/);  // Hardware Serial (RX & TX pins)    
 }
 
 void loop() {
