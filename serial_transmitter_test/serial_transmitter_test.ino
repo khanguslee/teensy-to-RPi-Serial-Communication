@@ -15,13 +15,13 @@ void setup() {
 void loop() {
   // LED ON
   digitalWrite(pin_LED, HIGH);
-  delay(500);
-  Serial.write("LED ON");
+  Serial.println("LED ON");
   HWSERIAL.write("LED ON");
+  delay(500);
   
   // LED OFF
   digitalWrite(pin_LED, LOW);
-  delay(500);
-  Serial.write("LED OFF");
+  Serial.println("LED OFF");
   HWSERIAL.write("LED OFF");
+  delay(500);
 }
