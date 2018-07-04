@@ -1,13 +1,12 @@
 import serial 
 
 ser = serial.Serial(
-	'/dev/ttyAMA0',
+	'/dev/serial0',
 	baudrate=500000,
-	parity=serial.PARITY_ODD,
-	bytesize=serial.EIGHTBITS,
-	stopbits=serial.STOPBITS_ONE
+	bytesize=serial.EIGHTBITS
 	)
 
 while True:
-	serial_output = ser.readline()
-	print(serial_output)
+	if ser.in_waiting > 0:	
+		serial_output = ser.read(ser.in_waiting)
+		print(str(serial_output))
