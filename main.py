@@ -7,6 +7,8 @@ ser = serial.Serial(
 	)
 
 while True:
-	if ser.in_waiting > 0:	
+	# Check if there is anything in the buffer
+	if ser.in_waiting > 0:
+		# Read and print the contents of the buffer
 		serial_output = ser.read(ser.in_waiting)
 		print(str(serial_output))
